@@ -6,7 +6,6 @@ const productList = [
   {img: "🥕", desc: "Carrot", pct: 0.1},
   {img: "🫑", desc: "Bell Pepper", pct: 0.2},
   {img: "🍅", desc: "Tomato", pct: 0.2},
-  {img: "🥬", desc: "Spinach", pct: 0.15},
   {img: "🥦", desc: "Broccoli", pct: 0.15},
   {img: "🍎", desc: "Apple", pct: 0.2},
   {img: "🫐", desc: "Blueberries", pct: 0.1},
@@ -15,10 +14,9 @@ const productList = [
   {img: "🍞", desc: "Bread", pct: 0.1},
   {img: "🍝", desc: "Spaghetti", pct: 0.1},
   {img: "🍚", desc: "Rice", pct: 0.15},
-  {img: "🥜", desc: "Peanuts", pct: 0.1},
   {img: "🐟", desc: "Fish", pct: 0.25},
   {img: "🥚", desc: "Egg", pct: 0.15},
-  {img: "🧀", desc: "Cheese", pct: 0.1},
+  {img: "🧀", desc: "Cheese", pct: 0.05},
   {img: "🍗", desc: "Chicken", pct: -0.1},
   {img: "🍟", desc: "French Fries", pct: -0.3},
   {img: "🍫", desc: "Chocolate", pct: -0.2},
@@ -27,6 +25,7 @@ const productList = [
 
 productList.forEach( (prod, i) => {
   var newProd = document.createElement("div");
+  newProd.setAttribute('pct', prod.pct);
   newProd.classList.add("food");
   var s1 = document.createElement("span");
   s1.innerHTML = prod.img;
@@ -36,7 +35,7 @@ productList.forEach( (prod, i) => {
   s2.innerHTML = prod.desc;
   s2.classList.add("food-name");
   newProd.appendChild(s2);
-  console.log(newProd)
+
   if (i % 2 == 0) {
     foodList1.appendChild(newProd);
   } else {
@@ -49,6 +48,7 @@ const foods = document.querySelectorAll(".food");
 const drop = document.querySelector(".drop");
 const plate = document.querySelector(".plate");
 const showcase = document.querySelector(".showcase");
+const progressbar = document.querySelector(".progress-bar");
 
 let start,
   offsetY,
@@ -56,7 +56,9 @@ let start,
   targetRect,
   target,
   dropped = false,
-  expanded = false;
+  expanded = false,
+  pct = 0,
+  onPlate = [];
 
 const stopped = () => {
   start = false;
@@ -64,21 +66,12 @@ const stopped = () => {
     showcase.classList.remove("is-dragging");
     target.classList.remove("is-selected");
     drop.classList.remove("is-active");
-    drop.classList.remove("is-ready");
   }
   if (dropped) {
-    showcase.classList.add("is-preview");
-    target.classList.add("is-expanded");
-    drop.classList.add("is-dropped");
-    drop.textContent = "CLOSE";
-    expanded = true;
-  } else {
-    drop.classList.remove("is-dropped");
-    showcase.classList.remove("is-preview");
-    target.classList.remove("is-expanded");
-    drop.textContent = "LEARN MORE";
-    expanded = false;
-  }
+    pct += Math.round(Number(target.getAttribute("pct")) * 100);
+    console.log(pct)
+    progressbar.style = `width: ${pct}%`;
+  } 
 };
 
 const started = (e, type) => {
@@ -132,17 +125,15 @@ const docMove = (e, type) => {
   }
 
   if (
-    clientY > drop.offsetTop &&
-    clientY < drop.offsetTop + drop.offsetHeight &&
-    clientX > drop.offsetLeft &&
-    clientX < drop.offsetLeft + drop.offsetWidth &&
+    clientY > plate.offsetTop &&
+    clientY < plate.offsetTop + plate.offsetHeight &&
+    clientX > plate.offsetLeft &&
+    clientX < plate.offsetLeft + plate.offsetWidth &&
     start &&
     !expanded
   ) {
-    drop.classList.add("is-ready");
     dropped = true;
   } else {
-    drop.classList.remove("is-ready");
     dropped = false;
   }
 
@@ -167,4 +158,10 @@ drop.addEventListener("click", () => {
   }
 });
 
+function isInArray(string, array) {
+  return array.indexOf(string) !== -1;
+}
 
+function deleteFromArray(string, array) {
+  return array.filter(item => item !== string);
+}
