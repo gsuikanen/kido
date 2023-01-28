@@ -1,0 +1,15 @@
+.plate-container {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px
+}
+
+#plate {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/708453/plate-1.png");
+   }
+
+.food {
+    font-size: 4rem;
+}
