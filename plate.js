@@ -1,5 +1,7 @@
+/* Plate game */
 const foods = document.querySelectorAll(".food");
 const drop = document.querySelector(".drop");
+const plate = document.querySelector(".plate");
 const showcase = document.querySelector(".showcase");
 
 let start,
@@ -118,3 +120,5 @@ drop.addEventListener("click", () => {
     stopped();
   }
 });
+
+

@@ -6,6 +6,25 @@
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   overflow: hidden;
+  background-color: #FDF1DB;
+}
+
+h1 {
+  color: #E00543;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.face {
+  font-size: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.progress {
+  margin: 10px;
+  width: 1000px;
+  height: 2rem;
 }
 
 .food-img {
@@ -121,7 +140,7 @@ body {
 .food.is-expanded > .food-name { display: none; }
 
 .showcase {
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   justify-content: space-evenly;
   align-items: center;
