@@ -8,19 +8,31 @@ body {
   background-color: #FDF1DB;
 }
 
-h1 {
+.plate-heading {
   color: #E00543;
   margin-top: 40px;
   margin-bottom: 40px;
+  font-size: 4rem;
+}
+
+.main-heading {
+  color: #E00543;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  font-size: 4rem;
 }
 
 .header {
   width: 100%;
 }
 
-.navbar {
+.navbar, .footer {
   background-color: #5db77c;
   color: white;
+}
+
+.footer {
+  margin-top: 60px;
 }
 
 a, u, a:hover, u:hover {
@@ -28,7 +40,7 @@ a, u, a:hover, u:hover {
   color: white;
 }
 
-.card {
+.card, iframe {
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -43,6 +55,11 @@ a, u, a:hover, u:hover {
   margin: 10px;
   width: 1000px;
   height: 2rem;
+}
+
+#plate-image {
+  width: 500px;
+  height: 500px;
 }
 
 .food-img {
