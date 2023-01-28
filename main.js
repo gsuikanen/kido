@@ -1,26 +1,120 @@
-var plate = document.getElementById("plate");
-var bacon = document.getElementById("bacon");
+const foods = document.querySelectorAll(".food");
+const drop = document.querySelector(".drop");
+const showcase = document.querySelector(".showcase");
 
-plate.addEventListener("drop", function(event) {
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
+let start,
+  offsetY,
+  offsetX,
+  targetRect,
+  target,
+  dropped = false,
+  expanded = false;
+
+const stopped = () => {
+  start = false;
+  if (target) {
+    showcase.classList.remove("is-dragging");
+    target.classList.remove("is-selected");
+    drop.classList.remove("is-active");
+    drop.classList.remove("is-ready");
+  }
+  if (dropped) {
+    showcase.classList.add("is-preview");
+    target.classList.add("is-expanded");
+    drop.classList.add("is-dropped");
+    drop.textContent = "CLOSE";
+    expanded = true;
+  } else {
+    drop.classList.remove("is-dropped");
+    showcase.classList.remove("is-preview");
+    target.classList.remove("is-expanded");
+    drop.textContent = "LEARN MORE";
+    expanded = false;
+  }
+};
+
+const started = (e, type) => {
+  start = true;
+  target = e.target;
+  if (type === "touch") {
+    console.log(e.touches[0]);
+    offsetY = target.offsetWidth / 2 + target.offsetTop;
+    offsetX = target.offsetWidth / 2 + target.offsetLeft;
+  } else {
+    offsetY = e.offsetY + target.offsetTop;
+    offsetX = e.offsetX + target.offsetLeft;
+  }
+  targetRect = target.getBoundingClientRect();
+  target.classList.add("is-selected");
+  showcase.classList.add("is-dragging");
+};
+
+foods.forEach(food => {
+  food.addEventListener("mousedown", e => {
+    started(e, "mouse");
+  });
+  food.addEventListener("touchstart", e => {
+    started(e, "touch");
+  });
 });
 
-plate.addEventListener("dragover", function(event) {
-    event.preventDefault();
+const docUp = () => {
+  if (!expanded && target) {
+    stopped();
+  }
+};
+
+document.addEventListener("mouseup", () => {
+  docUp();
+});
+document.addEventListener("touchend", () => {
+  docUp();
 });
 
-bacon.addEventListener("dragstart", function(event) {
-    event.dataTransfer.setData("text", event.target.id);
+const docMove = (e, type) => {
+  let clientX = 0,
+    clientY = 0;
+
+  if (type === "touch") {
+    clientX = e.touches[0].clientX;
+    clientY = e.touches[0].clientY;
+  } else {
+    clientX = e.clientX;
+    clientY = e.clientY;
+  }
+
+  if (
+    clientY > drop.offsetTop &&
+    clientY < drop.offsetTop + drop.offsetHeight &&
+    clientX > drop.offsetLeft &&
+    clientX < drop.offsetLeft + drop.offsetWidth &&
+    start &&
+    !expanded
+  ) {
+    drop.classList.add("is-ready");
+    dropped = true;
+  } else {
+    drop.classList.remove("is-ready");
+    dropped = false;
+  }
+
+  if (start && !expanded) {
+    target.style.transform = `translateY(${clientY -
+      offsetY}px) translateX(${clientX - offsetX}px)`;
+  }
+};
+
+document.addEventListener("mousemove", e => {
+  docMove(e, "mouse");
+});
+document.addEventListener("touchmove", e => {
+  docMove(e, "touch");
 });
 
-document.body.addEventListener("drop", function(event) {
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
-});
-
-document.body.addEventListener("dragover", function(event) {
-    event.preventDefault();
+drop.addEventListener("click", () => {
+  if (expanded) {
+    dropped = false;
+    target.style.transform = "none";
+    stopped();
+  }
 });
