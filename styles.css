@@ -5,7 +5,6 @@
 
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  overflow: hidden;
   background-color: #FDF1DB;
 }
 
@@ -13,6 +12,25 @@ h1 {
   color: #E00543;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.header {
+  width: 100%;
+}
+
+.navbar {
+  background-color: #5db77c;
+  color: white;
+}
+
+a, u, a:hover, u:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.card {
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .face {
