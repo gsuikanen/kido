@@ -10,9 +10,7 @@ body {
 
 .plate-heading {
   color: #E00543;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .main-heading {
@@ -53,7 +51,7 @@ a, u, a:hover, u:hover {
 
 .progress {
   margin: 10px;
-  width: 1000px;
+  width: 700px;
   height: 2rem;
 }
 

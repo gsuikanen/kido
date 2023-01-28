@@ -1,4 +1,50 @@
-/* Plate game */
+/* Preparing products */
+const foodList1 = document.querySelector(".foodlist1");
+const foodList2 = document.querySelector(".foodlist2");
+
+const productList = [
+  {img: "🥕", desc: "Carrot", pct: 0.1},
+  {img: "🫑", desc: "Bell Pepper", pct: 0.2},
+  {img: "🍅", desc: "Tomato", pct: 0.2},
+  {img: "🥬", desc: "Spinach", pct: 0.15},
+  {img: "🥦", desc: "Broccoli", pct: 0.15},
+  {img: "🍎", desc: "Apple", pct: 0.2},
+  {img: "🫐", desc: "Blueberries", pct: 0.1},
+  {img: "🍉", desc: "Watermelon", pct: 0.1},
+  {img: "🍐", desc: "Pear", pct: 0.1},
+  {img: "🍞", desc: "Bread", pct: 0.1},
+  {img: "🍝", desc: "Spaghetti", pct: 0.1},
+  {img: "🍚", desc: "Rice", pct: 0.15},
+  {img: "🥜", desc: "Peanuts", pct: 0.1},
+  {img: "🐟", desc: "Fish", pct: 0.25},
+  {img: "🥚", desc: "Egg", pct: 0.15},
+  {img: "🧀", desc: "Cheese", pct: 0.1},
+  {img: "🍗", desc: "Chicken", pct: -0.1},
+  {img: "🍟", desc: "French Fries", pct: -0.3},
+  {img: "🍫", desc: "Chocolate", pct: -0.2},
+  {img: "🍬", desc: "Watermelon", pct: -0.15}
+]
+
+productList.forEach( (prod, i) => {
+  var newProd = document.createElement("div");
+  newProd.classList.add("food");
+  var s1 = document.createElement("span");
+  s1.innerHTML = prod.img;
+  s1.classList.add("food-img");
+  newProd.appendChild(s1);
+  var s2 = document.createElement("span");
+  s2.innerHTML = prod.desc;
+  s2.classList.add("food-name");
+  newProd.appendChild(s2);
+  console.log(newProd)
+  if (i % 2 == 0) {
+    foodList1.appendChild(newProd);
+  } else {
+    foodList2.appendChild(newProd);
+  }
+})
+
+/* Game */
 const foods = document.querySelectorAll(".food");
 const drop = document.querySelector(".drop");
 const plate = document.querySelector(".plate");
