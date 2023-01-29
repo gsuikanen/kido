@@ -56,8 +56,8 @@ a, u, a:hover, u:hover {
 }
 
 #plate-image {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
 }
 
 .food-img {
@@ -71,14 +71,14 @@ a, u, a:hover, u:hover {
   border-radius: 50%;
   text-align: center;
   transition: .5s;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .food {
-  width: 80px;
+  width: 50px;
   flex-shrink: 0;
   margin: 0 10px;
-  height: 80px;
+  height: 50px;
   border-radius: 50%;
   user-select: none;
   cursor: pointer;
@@ -196,4 +196,90 @@ a, u, a:hover, u:hover {
   height: 100%;
   transform: none !important;
   z-index: 2;
+}
+
+
+/* Modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close-modal {
+  color: #FDF1DB;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #E00543;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 10px 20px;
+  background-color: #E00543;
+  color: white;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+}
+
+/* Modal button */
+.modal-btn {
+  background-color: white;
+}
+
+.modal-text {
+  font-size: 1.5rem;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  position: absolute;
+  right: 20px;
 }

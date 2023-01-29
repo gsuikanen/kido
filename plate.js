@@ -3,15 +3,15 @@ const foodList1 = document.querySelector(".foodlist1");
 const foodList2 = document.querySelector(".foodlist2");
 
 const productList = [
-  {img: "🥕", desc: "Carrot", pct: 0.1},
+  {img: "🥕", desc: "Carrot", pct: 0.15},
   {img: "🫑", desc: "Bell Pepper", pct: 0.2},
   {img: "🍅", desc: "Tomato", pct: 0.2},
   {img: "🥦", desc: "Broccoli", pct: 0.15},
-  {img: "🍎", desc: "Apple", pct: 0.2},
-  {img: "🫐", desc: "Blueberries", pct: 0.1},
+  {img: "🍎", desc: "Apple", pct: 0.5},
+  {img: "🫐", desc: "Blueberries", pct: 0.15},
   {img: "🍉", desc: "Watermelon", pct: 0.1},
   {img: "🍐", desc: "Pear", pct: 0.1},
-  {img: "🍞", desc: "Bread", pct: 0.1},
+  {img: "🍞", desc: "Bread", pct: 0.2},
   {img: "🍝", desc: "Spaghetti", pct: 0.1},
   {img: "🍚", desc: "Rice", pct: 0.15},
   {img: "🐟", desc: "Fish", pct: 0.25},
@@ -69,8 +69,10 @@ const stopped = () => {
   }
   if (dropped) {
     pct += Math.round(Number(target.getAttribute("pct")) * 100);
-    console.log(pct)
     progressbar.style = `width: ${pct}%`;
+    if (pct >= 100) {
+      openModal();
+    }
   } 
 };
 
@@ -164,4 +166,14 @@ function isInArray(string, array) {
 
 function deleteFromArray(string, array) {
   return array.filter(item => item !== string);
+}
+
+function openModal() {
+  var modal = document.getElementById("modal");
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  var modal = document.getElementById("modal");
+  modal.style.display = "none";
 }
