@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- seed 2023 nutri -->
+
+    <title>seed.html 2023</title>
+    <meta name="description" content="documentation">
+    <meta name="author"      content="zl">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ MICRODATA -->
+    <meta property="og:url"          content="">
+    <meta property="og:image"        content="">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:type"         content="article">
+    <meta property="og:locale"       content="en_US">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ FAVICON -->
+    <meta name="theme-color"             content="#314159">
+    <meta name="msapplication-TileColor" content="#314159">
+    <meta name="msapplication-TileImage" content="art/icon512.png">
+    <link type="image/png" rel="icon"       href="art/icon512.png">
+    <link rel="apple-touch-icon"            href="art/icon512.png">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ༼°▽°༽ ~ BOOT SERVICE -->
+    <style>
+        html       { margin:0; padding:0  0.25rem; }
+        body       { margin:0; padding:0; height:auto; width:100%; }
+        img,svg,hr { margin:0; border: 0; max-width:100%; }
+        body       { overflow-y:scroll; }
+    </style>
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ GOOGLE FONTS -->
+    <link rel="preconnect"   href="//fonts.gstatic.com" crossorigin>
+    <link
+        media="none" onload="if(media!='all')media='all'"
+        href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        media="none" onload="if(media!='all')media='all'"
+        href="https://fonts.googleapis.com/css?family=VT323"
+        rel="stylesheet">
+<noscript>
+    <link
+        media="all"
+        href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        media="all"
+        href="https://fonts.googleapis.com/css?family=VT323"
+        rel="stylesheet">
+</noscript>
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ UI -->
+    <link
+        media="all"
+        href="app/style.css"
+        rel="stylesheet" type="text/css">
+
+</head>
+<body class="box">
+
+
+
+
+<h3>Code documentation</h3>
+
+<style display-source>
+    [display-source] {
+        display:     block;
+        font-family: monospace;
+        white-space: pre-wrap;
+        padding:     0 1em 2em 1em;
+    }
+</style>
+
+
+
+<h3>box</h3>
+
+<style display-source>
+    .box {
+      --sx:           1rem;
+        display:      grid;
+        padding:      var(--sx);
+        grid-row-gap: var(--sx);
+    }
+</style>
+
+
+
+<h3>HTML wrap</h3>
+
+<style display-source>
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Browsers */
+
+    html {
+        scroll-behavior: smooth;
+        cursor: default;
+    }
+
+    /* Single taps are dispatched immediately on clickable elements */
+    a, area, button, input, label, select, summary, textarea, [tabindex] {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation; }
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Box model */
+
+    *,*:before,*:after { box-sizing:border-box }
+
+    html {
+        margin:     0;
+        padding:    0;
+        width:      100%;
+        height:     100%;
+  }
+    body {
+        margin:     0;
+        padding:    0;
+        width:      100%;
+        min-height: 100%;
+        overflow-y: scroll; }
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+</style>
+
+
+
+<h3>Default Markup</h3>
+
+<style display-source>
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Markup ZL.2020 */
+
+    P, H1, H2, H3, H4, H5, H6 {
+        margin:  0;
+        padding: 0;
+        max-width:   42em;
+        font-weight: normal;
+    }
+    P {
+        font-size:   100%;
+        line-height: calc(24/16);
+    }
+    H1 {
+        font-size:   400%;
+        line-height: calc(80/64);
+    }
+    H2 {
+        font-size:   300%;
+        line-height: calc(64/48);
+    }
+    H3 {
+        font-size:   225%;
+        line-height: calc(48/36);
+    }
+    H4 {
+        font-size:   150%;
+        line-height: calc(32/24);
+    }
+    H5 {
+        font-size:   125%;
+        line-height: calc(24/20);
+    }
+    H6 {
+        font-size:   100%;
+        line-height: calc(24/16);
+    }
+
+    FIGURE, IMG, SVG {
+        display:   block;
+        max-width: 100%;
+        margin:    0;
+        padding:   0;
+        border:    0;
+    }
+
+    HR {
+        background: transparent;
+        box-shadow: none;
+        border:  0;
+        margin:  0;
+     /* Empty space marker */
+        display:    block;
+        font-size:  inherit;
+        height:     2.5rem;
+    }
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+</style>
+<article class="box use-colors colors--swed">
+
+    <h1>Markup & Typography Sample</h1>
+
+    <h5>
+        Et la grande personne était bien contente de connaître un homme aussi raisonnable </h5>
+    <h2>
+        Les grandes personnes </h2>
+    <p>
+        Les grandes personnes m’ont conseillé de laisser de côté les dessins de serpents boas ouverts ou fermés, et de m’intéresser plutôt à la géographie, à l’histoire, au calcul et à la grammaire. C’est ainsi que j’ai abandonné, à l’âge de six ans, une magnifique carrière de peintre. </p>
+    <h3>
+        Je lui parlais de bridge </h3>
+    <p>
+        Alors je ne lui parlais ni de serpents boas, ni de forêts vierges, ni d’étoiles. Je me mettais à sa portée. Je lui parlais de bridge, de golf, de politique et de cravates. Et la grande personne était bien contente de connaître un homme aussi raisonnable. </p>
+    <h4>
+        C’est un chapeau </h4>
+    <h4>
+        Je me mettais à sa portée </h4>
+
+    <footer>
+        <h4>
+            Et c’est fatigant </h4>
+        <p>
+            Les grandes personnes ne comprennent jamais rien toutes seules. Et c’est fatigant. </p>
+    </footer>
+
+</article>
+
+
+
+
+
+<h3>Color model</h3>
+
+<style display-source>
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Color Model ZL.2020 */
+
+    .use-colors {
+      --background-color: var(--back-color);
+      --color:            var(--text-color);
+        background-color: var(--background-color);
+        color:            var(--color);
+    }
+
+    .colors--base {
+      --back-color:       white;
+      --back-color-more:  white;
+      --back-color-less:  white;
+
+      --text-color:       black;
+      --text-color-more:  black;
+      --text-color-less:  black;
+
+      --link-color:       firebrick;
+      --link-color-more:  firebrick;
+      --link-color-text:  white;
+    }
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+</style>
+
+<h4>Color Palettes</h4>
+
+<article class="box x2">
+    <section class="el-display-palette colors--swed">
+        <header>
+            <h4>Swed Primary</h4>
+            <p>colors--swed</p>
+            </header>
+        <div class="content">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="accent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="descent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="action">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+    </section>
+    <section class="el-display-palette colors--swed-secondary">
+        <header>
+            <h4>Swed Secondary</h4>
+            <p>colors--swed-secondary</p>
+            </header>
+        <div class="content">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="accent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="descent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="action">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+    </section>
+    <section class="el-display-palette colors--swed-third">
+        <header>
+            <h4>Swed Third</h4>
+            <p>colors--swed-third</p>
+            </header>
+        <div class="content">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="accent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="descent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="action">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+    </section>
+    <section class="el-display-palette colors--ivory">
+        <header>
+            <h4>Ivory Paper</h4>
+            <p>colors--ivory</p>
+            </header>
+        <div class="content">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="accent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="descent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="action">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+    </section>
+    <section class="el-display-palette colors--base">
+        <header>
+            <h4>Base Colors</h4>
+            <p>colors--base</p>
+            </header>
+        <div class="content">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="accent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="descent">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+        <div class="action">
+            Et la grande personne était bien contente de connaître un homme aussi raisonnable</div>
+    </section>
+</article>
+<style display-source>
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Color Palettes */
+
+    .colors--swed {
+      --back-color:       hsl(226, 15%, 12%); /* NobleBlack */
+      --back-color-more:  hsl(212, 34%, 29%); /* NobleSea */
+      --back-color-less:  hsl(226, 17%, 20%); /* NobleNight */
+
+      --text-color:       hsl(226, 27%, 90%); /* NobleWhite */
+      --text-color-more:  hsl(226, 32%, 75%); /* NobleDay */
+      --text-color-less:  hsl(226, 32%, 66%);
+
+      --link-color:       hsl(359, 54%, 53%); /* NobleAccent */
+      --link-color-more:  hsl(359, 59%, 43%); /* NobleAction */
+      --link-color-text:  white;
+    }
+
+    .colors--swed-secondary {
+      --back-color:       hsl(212, 34%, 29%); /* NobleSea */
+      --back-color-more:  hsl(212, 42%, 22%);
+      --back-color-less:  hsl(212, 30%, 32%);
+
+      --text-color:       hsl(226, 27%, 90%); /* NobleWhite */
+      --text-color-more:  hsl(226, 32%, 75%); /* NobleDay */
+      --text-color-less:  hsl(226, 32%, 66%);
+
+      --link-color:       hsl(359, 54%, 53%); /* NobleAccent */
+      --link-color-more:  hsl(359, 59%, 43%); /* NobleAction */
+      --link-color-text:  white;
+    }
+
+    .colors--swed-third {
+      --back-color:       hsl(204, 22%, 55%); /* NobleSky */
+      --back-color-more:  hsl(204, 26%, 50%);
+      --back-color-less:  hsl(204, 18%, 58%);
+
+      --text-color:       hsl(226, 15%, 12%); /* NobleBlack */
+      --text-color-more:  hsl(212, 34%, 29%); /* NobleSea */
+      --text-color-less:  hsl(226, 17%, 20%); /* NobleNight */
+
+      --link-color:       hsl(359, 54%, 53%); /* NobleAccent */
+      --link-color-more:  hsl(359, 59%, 43%); /* NobleAction */
+      --link-color-text:  white;
+    }
+
+    .colors--ivory {
+      --back-color:       hsl( 53, 66%, 80%); /* Ivory */
+      --back-color-more:  hsl( 53, 70%, 70%);
+      --back-color-less:  hsl( 53, 70%, 76%); 
+
+      --text-color:       hsl(204,  4%, 22%); /* IvoryDark */
+      --text-color-more:  hsl(204,  8%, 38%); /* IvoryGray */
+      --text-color-less:  hsl(204,  8%, 38%); /* IvoryGray */
+
+      --link-color:       hsl(359, 54%, 53%); /* NobleAccent */
+      --link-color-more:  hsl(359, 59%, 43%); /* NobleAction */
+      --link-color-text:  white;
+    }
+
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+</style>
+<style display-source>
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Display Palette Component */
+
+    .el-display-palette {
+        display:  grid;
+        padding:  1rem;
+        grid-gap: 1rem;
+        grid-template-columns: repeat( auto-fill, 16em );
+        align-items: center;
+        background-color: var(--back-color);
+        color:            var(--text-color);
+    }
+    .el-display-palette header { text-align: right; }
+    .el-display-palette div    { padding:    1rem;  }
+    .el-display-palette div:nth-of-type(2) { background-color: var(--back-color-more); }
+    .el-display-palette div:nth-of-type(3) { background-color: var(--back-color-less); }
+    .el-display-palette div:nth-of-type(4) { background-color: var(--link-color);      }
+    .el-display-palette header p           { color: var(--text-color-more); }
+    .el-display-palette div:nth-of-type(4) { color: var(--link-color-text); }
+
+/** ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+</style>
+
+    <hr>
+
+</body>
+</html>
