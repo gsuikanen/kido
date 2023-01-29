@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- seed 2023 nutri -->
 
-    <title>Nutrient</title>
-    <meta name="description" content="game app">
-    <meta name="author"      content="zl">
+    <title>Kido 3-6</title>
+    <meta name="description" content="Play an learn why avoid burgers and candies">
+    <meta name="author"      content="#garage48food Kido">
 
 
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ MICRODATA -->
-    <meta property="og:url"          content="">
-    <meta property="og:image"        content="">
-    <meta property="og:image:width"  content="1200">
-    <meta property="og:image:height" content="628">
+    <meta property="og:url"          content="http://kido.one/kid3/">
+    <meta property="og:image"        content="http://kido.one/kid3/art/screen2.png">
     <meta property="og:type"         content="article">
     <meta property="og:locale"       content="en_US">
 
@@ -85,9 +83,6 @@
         <a href="#Plate" class="button green">PLAY</a>
         <a href="../" class="button">HOME PAGE</a>
     </div>
-    <div class="box" style="display:flex; justify-content:center; gap:2em;">
-        <div><img src="./art/plate-item.svg" alt="" style="width:40vh;"></div>
-    </div>
 </div>
 
 <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PLATE -->
@@ -138,8 +133,7 @@
             <figure class="box"><img src="./art/plate-item.svg" alt="plate item picture"></figure>
 -->
 
-<script src="./app/itemsConfig.js"></script>
-<script src="./app/plate.js"></script>
+
 
 <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ FEEDBACK -->
 
@@ -147,12 +141,51 @@
     <header class="box title">
         <h2>Feedback</h2>
     </header>
-
+    <div class="feedback-messages">
+        <div class="msgA box">
+            <h2>
+            Balance not reached
+            </h2>
+            <h3>
+            Not balanced food makes you weak
+            </h3>
+        </div>
+        <div class="msgB box">
+            <h2>
+            Not enough proteins
+            </h2>
+            <h3>
+            Proteins are required for grow
+            </h3>
+        </div>
+        <div class="msgC box">
+            <h2>
+            Too much sugar
+            </h2>
+            <h3>
+            Not good for teeth
+            </h3>
+        </div>
+        <div class="msgSuccess box">
+            <h2 style="color:hsl(179, 60%, 35%)">
+            You know how to eat
+            </h2>
+            <h3>
+            Good
+            </h3>
+        </div>
+    </div>
+    <div class="box" style="display:flex; justify-content:center; gap:2em; align-items:center">
+        <div><a href="./" class="button green">PLAY AGAIN</a></div>
+        <div><img src="./art/plate-item.svg" alt="" style="width:40vh;"></div>
+        <div><a href="../" class="button">HOME PAGE</a></div>
+    </div>
 </div>
 
-
+<script src="./app/itemsConfig.js"></script>
+<script src="./app/plate.js"></script>
 <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ THE END -->
-
+<section style="display:none">
     <header class="box">
         <h1>Nutrient</h1>
         <div>kido3-6game</div>
@@ -174,6 +207,6 @@
         </div>
         </section>
     </div>
-
+</section>
 </body>
 </html>
