@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- seed 2023 nutri -->
+
+    <title>Nutrient</title>
+    <meta name="description" content="game app">
+    <meta name="author"      content="zl">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ MICRODATA -->
+    <meta property="og:url"          content="">
+    <meta property="og:image"        content="">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:type"         content="article">
+    <meta property="og:locale"       content="en_US">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ FAVICON -->
+    <meta name="theme-color"             content="#314159">
+    <meta name="msapplication-TileColor" content="#314159">
+    <meta name="msapplication-TileImage" content="./art/icon512.png">
+    <link type="image/png" rel="icon"    href="./art/icon512.png">
+    <link rel="apple-touch-icon"         href="./art/icon512.png">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ༼°▽°༽ ~ BOOT SERVICE -->
+    <style>
+        html       { margin:0; padding:0; }
+        body       { margin:0; padding:0; height:auto; width:100%; }
+        img,svg,hr { margin:0; border: 0; max-width:100%; }
+        body       { overflow-y:scroll; }
+    </style>
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ GOOGLE FONTS -->
+    <link rel="preconnect"   href="//fonts.gstatic.com" crossorigin>
+    <link
+        media="none" onload="if(media!='all')media='all'"
+        href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        media="none" onload="if(media!='all')media='all'"
+        href="https://fonts.googleapis.com/css?family=VT323"
+        rel="stylesheet">
+<noscript>
+    <link
+        media="all"
+        href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        media="all"
+        href="https://fonts.googleapis.com/css?family=VT323"
+        rel="stylesheet">
+</noscript>
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ CSS COMPONENTS -->
+    <link
+        media="all"
+        href="./app/garage48.css"
+        rel="stylesheet" type="text/css">
+    <link
+        media="all"
+        href="./app/plate.css"
+        rel="stylesheet" type="text/css">
+
+</head>
+<body class="use-colors colors--swed">
+
+
+<!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ COVER -->
+
+<div class="screen use-colors colors--swed-secondary" id="Cover">
+    <header class="box title" style="color:white;font-size:1.5em;">
+        <h1>kido.one/kid3</h1>
+    </header>
+    <div class="box" style="text-align:center">
+        <h2>Play an learn <br>why avoid <br>burgers and candies</h2>
+    </div>
+    <div class="box" style="display:flex; justify-content:center; gap:2em;">
+        <a href="#Plate" class="button green">PLAY</a>
+        <a href="../" class="button">HOME PAGE</a>
+    </div>
+    <div class="box" style="display:flex; justify-content:center; gap:2em;">
+        <div><img src="./art/plate-item.svg" alt="" style="width:40vh;"></div>
+    </div>
+</div>
+
+<!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PLATE -->
+
+<div class="screen use-colors colors--ivory" id="Plate">
+    <div class="PlateWrap">
+        <section class="itemsA"></section>
+        <section class="itemsB"></section>
+        <section class="plateA" style="padding-top:2em">
+            <img src="./art/Plate_new.png" alt="">
+            <div class="items"></div>
+        </section>
+        <section class="plateB">
+           <div class="box">
+           <div class="features">
+              <div class="featureA">
+                  <h4>BALANCE:</h4>
+                  <div class="f-bar">
+                      <div class="f-bar-current"></div>
+                      <div class="f-bar-target"></div>
+                  </div>
+              </div>
+              <div class="featureB">
+                  <h4>PROTEIN:</h4>
+                  <div class="f-bar">
+                      <div class="f-bar-current"></div>
+                      <div class="f-bar-target"></div>
+                  </div>
+              </div>
+              <div class="featureC">
+                  <h4>SUGAR:</h4>
+                  <div class="f-bar">
+                      <div class="f-bar-current"></div>
+                      <div class="f-bar-target"></div>
+                  </div>
+              </div>
+           </div>
+           <div class="box">
+               <div>
+                 <a href="#Feedback" class="button">EAT!</a>              
+               </div>
+           </div>
+           </div>
+        </section>
+    </div>
+</div>
+<!-- itemsA/itemsB template
+            <figure class="box"><img src="./art/plate-item.svg" alt="plate item picture"></figure>
+-->
+
+<script src="./app/itemsConfig.js"></script>
+<script src="./app/plate.js"></script>
+
+<!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ FEEDBACK -->
+
+<div class="screen use-colors colors--swed" id="Feedback">
+    <header class="box title">
+        <h2>Feedback</h2>
+    </header>
+
+</div>
+
+
+<!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ THE END -->
+
+    <header class="box">
+        <h1>Nutrient</h1>
+        <div>kido3-6game</div>
+    </header>
+
+    <div class="box">
+       <section>
+        <h4>
+            Components
+        </h4>
+        <div display-text>
+
+            — cover, presentation screens
+            — plate, UI constructor
+              <a href="#Plate">GO SCREEN</a>
+            — feedback, knowlege sharing
+            — business, model
+
+        </div>
+        </section>
+    </div>
+
+</body>
+</html>
